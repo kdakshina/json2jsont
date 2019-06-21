@@ -1,0 +1,31 @@
+{
+  "name": "json2json",
+  "version": "1.0.0",
+  "description": "json to json transformation",
+  "type": "module",
+  "main":"./src/transform.js",
+  "scripts": {
+    "test": "node --experimental-modules  tests/transform.tests.mjs",
+    "start": "node --experimental-modules src/transform.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdakshina/json2json.git"
+  },
+  "keywords": [
+    "json",
+    "transformation",
+    "jsont"
+  ],
+  "author": "kdakshina@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kdakshina/json2json/issues"
+  },
+  "homepage": "https://github.com/kdakshina/json2json#readme",
+  "dependencies": {
+    "jsonpath": "^1.0.2",
+    "tape": "^4.10.2",
+    "uuid": "^3.3.2"
+  }
+}
