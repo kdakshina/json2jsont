@@ -1,4 +1,4 @@
-# json2json
+# json2jsont
 
 ## about
 json2jsont is a simple json to json transformation module.  It takes a 'map' json data to transform input json data. The whole transformation happens in 20 lines of code with a jsonpath module as dependency.
