@@ -1,5 +1,5 @@
 {
-  "name": "json2json",
+  "name": "json2jsont",
   "version": "1.0.0",
   "description": "json to json transformation",
   "type": "module",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kdakshina/json2json.git"
+    "url": "git+https://github.com/kdakshina/json2jsont.git"
   },
   "keywords": [
     "json",
@@ -20,9 +20,9 @@
   "author": "kdakshina@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kdakshina/json2json/issues"
+    "url": "https://github.com/kdakshina/json2jsont/issues"
   },
-  "homepage": "https://github.com/kdakshina/json2json#readme",
+  "homepage": "https://github.com/kdakshina/json2jsont#readme",
   "dependencies": {
     "jsonpath": "^1.0.2",
     "tape": "^4.10.2",
