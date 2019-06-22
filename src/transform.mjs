@@ -11,10 +11,6 @@ export default () => {
             return value && typeof value === 'object' && value.constructor === Object
         },
 
-        isString(value) {
-            return typeof value === 'string' || value instanceof String
-        },
-
         isUndefined(value) {
             return typeof value === 'undefined'
         },
@@ -22,7 +18,6 @@ export default () => {
         evaluate_undefined(data, key) {
             return null
         },
-
 
         evaluate_object(data, key) {
             return key
@@ -58,28 +53,25 @@ export default () => {
             return [tgtKey, srcKey]
         },
 
-        transform(input, map) {
-            let output = {}
+        transform(data, map) {
             map = map || {}
-            input = input || {}
-            Object.keys(map).map((key) => {
-                let [targetKey, sourceKey] = this.evaluateKeys(map, key)
-                let sourceObject = this.evaluateValue(input, sourceKey)
-                if (Array.isArray(input[sourceKey]) && this.isObject(map[key])) {
-                    output[targetKey] = sourceObject.map((dataItem, index) => {
-                        return this.transform(dataItem, map[key])
-                    })
-                    //console.log('ARRAY => ' + [targetKey, sourceKey, output[targetKey]])
-                } else if (this.isObject(input[sourceKey]) && this.isObject(map[key])) {
-                    output[targetKey] = this.transform(sourceObject, map[key])
-                    //console.log('OBJECT => ' + [targetKey, sourceKey, output[targetKey]])
-                } else {
-                    output[targetKey] = sourceObject
-                    //console.log('PROPERTY => ' + [targetKey, sourceKey, output[targetKey]])
-                }
-                //console.log([targetKey, sourceKey, output[targetKey]])
-            })
-            return output
+            data = data || {}
+            //console.log([input, map])
+            if (Array.isArray(data)) {
+                return data.map((dataItem, index) => {
+                    return this.transform(dataItem, map)
+                })
+            } else {
+                let output = {}
+                Object.keys(map).map((key) => {
+                    let [targetKey, sourceKey] = this.evaluateKeys(map, key)
+                    output[targetKey] = this.isObject(map[key])
+                        ? this.transform(data[sourceKey], map[key])
+                        : this.evaluateValue(data, sourceKey)
+                })
+                //console.log('OBJECT => ' + JSON.stringify(output))
+                return output
+            }
         }
     }
 }
