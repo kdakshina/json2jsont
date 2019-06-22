@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "json to json transformation",
   "type": "module",
-  "main":"./src/transform.js",
+  "main": "./src/transform.js",
   "scripts": {
     "test": "node --experimental-modules  tests/transform.tests.mjs",
     "start": "node --experimental-modules src/transform.mjs"
@@ -27,5 +27,8 @@
     "jsonpath": "^1.0.2",
     "tape": "^4.10.2",
     "uuid": "^3.3.2"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

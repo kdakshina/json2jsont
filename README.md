@@ -1,7 +1,7 @@
 # json2json
 
 ## about
-json2json is a super simple json to json transformation module.  It takes a 'map' json data to transform input json data. The whole transformation happens in 20 lines of code,  yeah it is that simple.
+json2jsont is a simple json to json transformation module.  It takes a 'map' json data to transform input json data. The whole transformation happens in 20 lines of code with a jsonpath module as dependency.
 
 ## mapfile 
 
