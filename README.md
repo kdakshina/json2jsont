@@ -41,6 +41,9 @@ result
     application_name: 'jpetstore', 
     external_id: '234',
     task_approval: {approval_id:'345', approval_id:'task approval'},
-    sub_tasks: [ { taks_id: 'task#1', task_name: 'approval task' }, { taks_id: 'task#2', task_name: 'develop task' } ]
+    sub_tasks: [ 
+         { taks_id: 'task#1', task_name: 'approval task' }, 
+         { taks_id: 'task#2', task_name: 'develop task' } 
+     ]
 }
 ```
